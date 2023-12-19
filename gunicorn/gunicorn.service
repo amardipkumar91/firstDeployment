@@ -11,7 +11,6 @@ ExecStart=/home/ubuntu/env/bin/gunicorn \
           --access-logfile - \
           --workers 3 \
           --bind unix:/run/gunicorn.sock \
-          companyapi.wsgi:application
-          
+          companyapi.wsgi:application   
 [Install]
 WantedBy=multi-user.targetX
