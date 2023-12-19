@@ -75,22 +75,29 @@ WSGI_APPLICATION = 'companyapi.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-import pymysql  
-pymysql.install_as_MySQLdb()
+# import pymysql  
+# pymysql.install_as_MySQLdb()
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'test_job',
+#         'USER': 'root',
+#         'PASSWORD': 'Vicky@1234',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#         'TEST': {
+#                 'NAME': 'unitest_new',
+#             },
+#     }
+# }
+import os
+PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test_job',
-        'USER': 'root',
-        'PASSWORD': 'Vicky@1234',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'TEST': {
-                'NAME': 'unitest_new',
-            },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(PROJECT_DIR, 'mydb.db'),
     }
 }
-
 
 
 # Password validation
